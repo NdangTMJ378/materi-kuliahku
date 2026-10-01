@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MateriKuliahku — Dashboard Sains Data</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">DS</div>
+        <div>
+          <strong>MateriKuliahku</strong>
+          <span>Data Science Hub</span>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <button class="nav-item active" data-view="dashboard">⌂ <span>Dashboard</span></button>
+        <button class="nav-item" data-view="courses">▦ <span>Mata Kuliah</span></button>
+        <button class="nav-item" data-view="grades">▤ <span>Nilai</span></button>
+        <button class="nav-item" data-view="notes">✎ <span>Catatan & Konsep</span></button>
+        <button class="nav-item" data-view="files">▱ <span>File PDF</span></button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="mini-card">
+          <span class="mini-label">Program</span>
+          <strong>S1 Sains Data</strong>
+          <small>Semester 1–8</small>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu">☰</button>
+        <div>
+          <div class="eyebrow">ACADEMIC WORKSPACE</div>
+          <h1 id="pageTitle">Dashboard</h1>
+        </div>
+        <div class="top-actions">
+          <input id="globalSearch" class="search" type="search" placeholder="Cari mata kuliah, konsep, catatan...">
+          <button class="icon-btn" id="themeToggle" title="Ganti tema">◐</button>
+        </div>
+      </header>
+
+      <section id="app"></section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop hidden" id="courseModal">
+    <div class="modal">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">DETAIL MATA KULIAH</div>
+          <h2 id="modalCourseTitle">Mata Kuliah</h2>
+        </div>
+        <button class="icon-btn" id="closeModal">×</button>
+      </div>
+      <div id="modalCourseBody"></div>
+    </div>
+  </div>
+
+  <template id="courseTemplate">
+    <article class="course-card">
+      <div class="course-code"></div>
+      <h3 class="course-name"></h3>
+      <div class="course-meta"></div>
+      <div class="progress"><span></span></div>
+      <div class="card-actions">
+        <button class="btn btn-primary detail-btn">Buka</button>
+        <button class="btn btn-soft grade-btn">Nilai</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
